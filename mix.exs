@@ -24,6 +24,8 @@ defmodule Daydream.MixProject do
   defp deps do
     [
       {:scenic, "~> 0.10"},
+      {:vector, "~> 1.0"},
+      {:typed_struct, "~> 0.2.1"},
       {:scenic_driver_glfw, "~> 0.10", targets: :host},
     ]
   end

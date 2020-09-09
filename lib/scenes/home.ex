@@ -15,9 +15,9 @@ defmodule Daydream.Scene.Home do
 
     texture = Scenic.Utilities.Texture.build!(:rgb, width, height)
 
-    height-1..0 |> Enum.each(fn row ->
+    0..height-1 |> Enum.each(fn row ->
       0..width-1 |> Enum.each(fn col ->
-        texture |> Scenic.Utilities.Texture.put!(col, row, computer_pixel_color(row, col, width, height))
+         texture |> Scenic.Utilities.Texture.put!(col, row, computer_pixel_color(row, col, width, height))
       end)
     end)
 
@@ -37,9 +37,6 @@ defmodule Daydream.Scene.Home do
   end
 
   defp computer_pixel_color(row, col, w, h) do
-    r = trunc((col / w) * 255)
-    g = trunc((row / h) * 255)
-    b = 64
-    {r, g, b}
+    Daydream.Util.compute_rgb_tuple({(col / w), (row / h), 0.25})
   end
 end

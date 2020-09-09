@@ -5,7 +5,7 @@ use Mix.Config
 # Configure the main viewport for the Scenic application
 config :daydream, :viewport, %{
   name: :main_viewport,
-  size: {700, 600},
+  size: {256, 256},
   default_scene: {Daydream.Scene.Home, nil},
   drivers: [
     %{
